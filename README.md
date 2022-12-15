@@ -8,7 +8,7 @@ ii) Bhupendra Mahar (bmahar1@jh.edu)
 iii) Ritwik Rohan (rrohan2@jh.edu)
 
 ### Our Dataset
-We have kept our dataset in this google drive. Also you need to mount this drive in the notebook to run the codes. We have give the access to anyone with this link.
+We have kept our dataset in this google drive. Also you need to mount this drive in the notebook to run the codes. We have given the access to anyone with this link.
 
 Google drive link: https://drive.google.com/drive/folders/1Gz29NftwsLkPvRwlYkzjzYFO1qsGCdtH?usp=sharing
 
