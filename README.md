@@ -7,6 +7,10 @@ i) Abhay Kodapurath Ajay (fkodapu1@jh.edu)
 ii) Bhupendra Mahar (bmahar1@jh.edu)
 iii) Ritwik Rohan (rrohan2@jh.edu)
 
+### Our Dataset
+We have kept our dataset in this google drive. Also you need to mount this drive in the notebook to run the codes.
+
+Google drive link: https://drive.google.com/drive/folders/1Gz29NftwsLkPvRwlYkzjzYFO1qsGCdtH
 
 ### Codes in the git repo
 i) metrics.py - Code for loss functions and F1 and IoU scores
@@ -79,7 +83,7 @@ Test Folder-----
 ### Training Command:
 
 ```bash 
-python train.py --train_dataset "enter train directory" --val_dataset "enter validation directory" --direc 'path for results to be saved' --batch_size 4 --epoch 400 --save_freq 10 --modelname "gatedaxialunet" --learning_rate 0.001 --imgsize 128 --gray "no"
+!python train.py --train_dataset "/content/drive/MyDrive/MLProject/dataset/Train_resized" --val_dataset "/content/drive/MyDrive/MLProject/dataset/Validation_resized" --direc '/content/drive/MyDrive/MLProject/dataset/Results' --batch_size 4 --epoch 400 --save_freq 10 --modelname "MedT" --learning_rate 0.001 --imgsize 450 --gray "no"
 ```
 
 ```bash
