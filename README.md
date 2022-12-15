@@ -10,7 +10,7 @@ iii) Ritwik Rohan (rrohan2@jh.edu)
 ### Our Dataset
 We have kept our dataset in this google drive. Also you need to mount this drive in the notebook to run the codes.
 
-Google drive link: https://drive.google.com/drive/folders/1Gz29NftwsLkPvRwlYkzjzYFO1qsGCdtH
+Google drive link: https://drive.google.com/drive/folders/1Gz29NftwsLkPvRwlYkzjzYFO1qsGCdtH?usp=sharing
 
 ### Codes in the git repo
 i) metrics.py - Code for loss functions and F1 and IoU scores
