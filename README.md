@@ -93,5 +93,5 @@ Change modelname to MedT or logo to train them according to the type of model yo
 ### Testing Command:
 
 ```bash 
-python test.py --loaddirec "./saved_model_path/model_name.pth" --val_dataset "test dataset directory" --direc 'path for results to be saved' --batch_size 1 --modelname "gatedaxialunet" --imgsize 128 --gray "no"
+!python test.py --train_dataset "/content/drive/MyDrive/MLProject/dataset/Train_resized" --loaddirec "/content/drive/MyDrive/MLProject/dataset/Results/390/MedT.pth" --val_dataset "/content/drive/MyDrive/MLProject/dataset/Train_resized" --direc '/content/drive/MyDrive/MLProject/test_set/Results/' --batch_size 1 --modelname "MedT" --imgsize 450 --gray "no"
 ```
