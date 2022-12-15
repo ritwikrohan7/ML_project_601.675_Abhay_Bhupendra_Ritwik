@@ -87,8 +87,8 @@ tf_val = JointTransform2D(crop=crop, p_flip=0, color_jitter_params=None, long_ma
 train_dataset = ImageToImage2D(args.train_dataset, tf_train)
 val_dataset = ImageToImage2D(args.val_dataset, tf_val)
 predict_dataset = Image2D(args.val_dataset)
-dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True)
-valloader = DataLoader(val_dataset, 1, shuffle=True)
+dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=False)
+valloader = DataLoader(val_dataset, 1, shuffle=False)
 
 device = torch.device("cuda")
 
@@ -100,4 +100,6 @@ elif modelname == "gatedaxialunet":
     model = lib.models.axialnet.gated(img_size = imgsize, imgchan = imgchant)
 elif modelname == "logo":
     model = lib.models.axialnet.logo(img_size = imgsize, imgchan = imgchant)
+
+print(dataloader)
 
