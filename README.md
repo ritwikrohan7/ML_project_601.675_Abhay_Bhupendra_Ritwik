@@ -16,9 +16,10 @@ iii) Ritwik Rohan (rrohan2@jh.edu)
 
 - Clone this repository using these command in jupyter notebook:
 
+```bash
 git clone https://github.com/ritwikrohan7/ML_project_601.675_Abhay_Bhupendra_Ritwik.git
-
 %cd ML_project_601.675_Abhay_Bhupendra_Ritwik
+```
 
 
 The code is stable using Python 3.6.10, Pytorch 1.4.0
