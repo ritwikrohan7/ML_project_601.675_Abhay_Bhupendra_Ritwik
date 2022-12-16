@@ -101,7 +101,7 @@ Test Folder-----
 The default size for image is 128. If you want to change the image dimension, you have to change the dimension in the 4 resizing cells. The command looks like this: "new_image = cv2.resize(a,(128,128))". Change the value in all 4 cells if you want to chnage the dimension. Also change image size in the train command below
 
 
-### Training Command:
+### Training Command in jupyter notebook:
 
 ```bash 
 !python train.py --train_dataset "/content/drive/MyDrive/MLProject/dataset/Train_resized" --val_dataset "/content/drive/MyDrive/MLProject/dataset/Validation_resized" --direc '/content/drive/MyDrive/MLProject/dataset/Results' --batch_size 4 --epoch 400 --save_freq 10 --modelname "MedT" --learning_rate 0.001 --imgsize 128 --gray "no"
@@ -111,7 +111,7 @@ The default size for image is 128. If you want to change the image dimension, yo
 Change modelname to MedT (our proposed model) or logo (only local-global training) to train them according to the model required. 
 ```
 
-### Testing Command:
+### Testing Command in jupyter notebook:
 
 ```bash 
 !python test.py --train_dataset "/content/drive/MyDrive/MLProject/dataset/Train_resized" --loaddirec "/content/drive/MyDrive/MLProject/dataset/Results/390/MedT.pth" --val_dataset "/content/drive/MyDrive/MLProject/dataset/Train_resized" --direc '/content/drive/MyDrive/MLProject/test_set/Results/' --batch_size 1 --modelname "MedT" --imgsize 128 --gray "no"
