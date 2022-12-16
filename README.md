@@ -14,6 +14,12 @@ iii) Ritwik Rohan (rrohan2@jh.edu)
 
 ### Using the code:
 
+Mount the google drive in the jupyter notebook using this command:
+```bash
+from google.colab import drive
+drive.mount('/content/drive')
+```
+
 - Clone this repository using these command in jupyter notebook:
 
 ```bash
