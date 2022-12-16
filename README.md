@@ -48,6 +48,8 @@ iv) test.py: This code is used to test the trained model using the trained model
 
 v) utils.py and utils_gray.py: This code has all the preprocessing functions like jointtransform2D, imagetoimage2D etc.
 
+vi) lib/model/model_codes.py: This code has the forward function for all the models that we used to compare our proposed model with.
+
 
 You can access the datasets from the google drive link. We have given the drive access to anyone with this link. Google drive link: https://drive.google.com/drive/folders/1Gz29NftwsLkPvRwlYkzjzYFO1qsGCdtH?usp=sharing
 
