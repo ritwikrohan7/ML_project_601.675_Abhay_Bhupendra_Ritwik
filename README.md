@@ -56,6 +56,8 @@ You can access the datasets from the google drive link. We have given the drive 
 
 ### Dataset Preparation
 
+The datasets are already present in the google drive (link above). In case you need to run with different datasets, follow the procedure below:
+
 Prepare the dataset in the following format for easy use of the code. The train and test folders should contain two subfolders each: img and label. Make sure the images their corresponding segmentation masks are placed under these folders and have the same name for easy correspondance. Please change the data loaders to your need if you prefer not preparing the dataset in this format.
 
 
