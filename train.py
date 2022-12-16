@@ -126,16 +126,16 @@ torch.cuda.manual_seed(seed)
 for epoch in range(args.epochs):
 
     epoch_running_loss = 0
-    
-    for batch_idx, (X_batch, y_batch, *rest) in enumerate(dataloader):        
-        
-        
+
+    for batch_idx, (X_batch, y_batch, *rest) in enumerate(dataloader):
+
+
 
         X_batch = Variable(X_batch.to(device ='cuda'))
         y_batch = Variable(y_batch.to(device='cuda'))
-        
+
         # ===================forward=====================
-        
+
 
         output = model(X_batch)
 
@@ -151,21 +151,21 @@ for epoch in range(args.epochs):
         yHaT = tmp
         yval = tmp2
 
-        
+
 
         loss = criterion(output, y_batch)
-        
+
         # ===================backward====================
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
         epoch_running_loss += loss.item()
-        
+
     # ===================log========================
     print('epoch [{}/{}], loss:{:.4f}'
           .format(epoch, args.epochs, epoch_running_loss/(batch_idx+1)))
 
-    
+
     if epoch == 10:
         for param in model.parameters():
             param.requires_grad =True
@@ -183,7 +183,7 @@ for epoch in range(args.epochs):
             # start = timeit.default_timer()
             y_out = model(X_batch)
             # stop = timeit.default_timer()
-            # print('Time: ', stop - start) 
+            # print('Time: ', stop - start)
             tmp2 = y_batch.detach().cpu().numpy()
             tmp = y_out.detach().cpu().numpy()
             tmp[tmp>=0.5] = 1
@@ -198,23 +198,23 @@ for epoch in range(args.epochs):
             yval = tmp2
 
             epsilon = 1e-20
-            
+
             del X_batch, y_batch,tmp,tmp2, y_out
 
-            
+
             yHaT[yHaT==1] =255
             yval[yval==1] =255
             fulldir = direc+"/{}/".format(epoch)
             # print(fulldir+image_filename)
             if not os.path.isdir(fulldir):
-                
+
                 os.makedirs(fulldir)
-            
+
             cv2.imwrite(fulldir+image_filename, yHaT[0,1,:,:])
             # cv2.imwrite(fulldir+'/gt_{}.png'.format(count), yval[0,:,:])
         fulldir = direc+"/{}/".format(epoch)
         torch.save(model.state_dict(), fulldir+args.modelname+".pth")
         torch.save(model.state_dict(), direc+"final_model.pth")
-            
+
 
 
