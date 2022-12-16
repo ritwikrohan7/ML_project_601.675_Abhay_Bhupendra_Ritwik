@@ -5,11 +5,11 @@ Team Mentor: Sophia Sklaviadis
 
 Team Members:
 
-i) Abhay Kodapurath Ajay
+i) Abhay Kodapurath Ajay (fkodapu1@jh.edu)
 
-ii) Bhupendara Mahar
+ii) Bhupendara Mahar (bmahar1@jh.edu)
 
-iii) Ritwik Rohan
+iii) Ritwik Rohan (rrohan2@jh.edu)
 
 
 ### Using the code:
@@ -17,6 +17,7 @@ iii) Ritwik Rohan
 - Clone this repository using these command in jupyter notebook:
 
 git clone https://github.com/ritwikrohan7/ML_project_601.675_Abhay_Bhupendra_Ritwik.git
+
 %cd ML_project_601.675_Abhay_Bhupendra_Ritwik
 
 
@@ -39,6 +40,10 @@ iii) train.py: This code is used to train the model and the model can be selecte
 iv) test.py: This code is used to test the trained model using the trained model.
 
 v) utils.py and utils_gray.py: This code has all the preprocessing functions like jointtransform2D, imagetoimage2D etc.
+
+
+You can access the datasets from the google drive link. We have given the drive access to anyone with this link. Google drive link: https://drive.google.com/drive/folders/1Gz29NftwsLkPvRwlYkzjzYFO1qsGCdtH?usp=sharing
+
 
 ## Using the Code for your dataset
 
@@ -80,20 +85,24 @@ Test Folder-----
 ```
 
 - The ground truth images should have pixels corresponding to the labels. Example: In case of binary segmentation, the pixels in the GT should be 0 or 255.
+### Before Training:
+
+The default size for image is 128. If you want to change the image dimension, you have to change the dimension in the 4 resizing cells. The command looks like this: "new_image = cv2.resize(a,(128,128))". Change the value in all 4 cells if you want to chnage the dimension. Also change image size in the train command below
+
 
 ### Training Command:
 
 ```bash 
-python train.py --train_dataset "enter train directory" --val_dataset "enter validation directory" --direc 'path for results to be saved' --batch_size 4 --epoch 400 --save_freq 10 --modelname "gatedaxialunet" --learning_rate 0.001 --imgsize 128 --gray "no"
+!python train.py --train_dataset "/content/drive/MyDrive/MLProject/dataset/Train_resized" --val_dataset "/content/drive/MyDrive/MLProject/dataset/Validation_resized" --direc '/content/drive/MyDrive/MLProject/dataset/Results' --batch_size 4 --epoch 400 --save_freq 10 --modelname "MedT" --learning_rate 0.001 --imgsize 128 --gray "no"
 ```
 
 ```bash
-Change modelname to MedT or logo to train them
+Change modelname to MedT (our proposed model) or logo (only local-global training) to train them according to the model required. 
 ```
 
 ### Testing Command:
 
 ```bash 
-python test.py --loaddirec "./saved_model_path/model_name.pth" --val_dataset "test dataset directory" --direc 'path for results to be saved' --batch_size 1 --modelname "gatedaxialunet" --imgsize 128 --gray "no"
+!python test.py --train_dataset "/content/drive/MyDrive/MLProject/dataset/Train_resized" --loaddirec "/content/drive/MyDrive/MLProject/dataset/Results/390/MedT.pth" --val_dataset "/content/drive/MyDrive/MLProject/dataset/Train_resized" --direc '/content/drive/MyDrive/MLProject/test_set/Results/' --batch_size 1 --modelname "MedT" --imgsize 128 --gray "no"
 ```
 
